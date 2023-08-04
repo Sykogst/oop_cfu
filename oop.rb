@@ -33,6 +33,32 @@ p horn_horse2.say('moody')
 #  it should have a thirsty attribute, that is true by default
 #  it should have a drink method. When called, the thirsty attribute changes to false
 
+# Define class called Vampire
+class Vampire
+    # Three attributes: name (dynamic), pet (default is 'bat', can be dynamic - goes last), thirsty (default is true)
+    attr_reader :name, :thirsty, :pet
+    def initialize(name, pet = 'bat')
+        @name = name
+        @thirsty = true
+        @pet = pet
+    end
+    # method: drink, when called thirsty attribute changes to false; no parameters required
+    def drink
+        @thirsty = false
+    end
+end
+
+# Create variable blood_being1, to assign first Vampire object instance; Only include new attribute name 'Dracula' and default pet
+# Prints to display attributes of this object
+blood_being1 = Vampire.new('Dracula')
+p blood_being1
+# Create variable blood_being2, to assign another Vampire object instance; name is 'Mortimer' and pet is 'cat'
+# Call drink instance method on blood_being2, to change thirsty status
+# Prints to display attributes of this object
+blood_being2 = Vampire.new('Mortimer', 'cat')
+blood_being2.drink
+p blood_being2
+
 
 #  Write a Dragon class
 #  it should have a dynamic name attribute (string)
