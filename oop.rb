@@ -97,7 +97,6 @@ giant_lizard1.eat(4)
 p giant_lizard1
         
 
-
 #  Write a Hobbit class
 #  it should have a dynamic name attribute (string)
 #  it should have a dynamic disposition attribute (string)
@@ -106,3 +105,35 @@ p giant_lizard1
 #  it should have an is_adult attribute (boolean) that is false by default. once a Hobbit is 33, it should be an adult
 #  it should have an is_old attribute that defaults to false. once a Hobbit is 101, it is old.
 #  it should have a has_ring attribute. If the Hobbit's name is "Frodo", true, if not, false.
+
+# Define class called Hobbit
+class Hobbit
+    # Attributes: name (string dynamic), disposition (string dynamic), age (default to 0), is_adult (default false), has_ring (true if Hobbit name is 'Frodo')
+    attr_reader :name, :disposition, :age, :is_adult, :has_ring
+    def initialize(name, disposition)
+        @name = name
+        @disposition = disposition
+        @age = 0
+        @is_adult = false
+        # If Hobbit is named 'Frodo', they have the ring; meaning has_ring = true
+        @name == 'Frodo' ? (@has_ring = true) : (@has_ring = false)
+    end
+    # method: celebrate_birthday, increases age by 1 when called; no arguments required
+    def celebrate_birthday
+        @age = @age + 1
+        # if age is 101 or greater, is_adult attribute is also updated to value of true
+        @is_adult = true if @age >= 101 
+    end
+end
+
+# Create variable hobbit1, assign a new Hobbit object instance with arguments: name of 'Sam', disposition 'loyal'
+# Print to display attributes of this object
+hobbit1 = Hobbit.new('Sam', 'loyal')
+p hobbit1
+# Create variable hobbit2, assign a new Hobbit object instance with arguments: name of 'Frodo', disposition 'loyal'
+# Print to display attributes of this object, has_ring should be true for this case
+hobbit2 = Hobbit.new('Frodo', 'forgiving')
+p hobbit2
+# Call instance method on hobbit2 101 times, using times method, to test if is_adult properly udpates
+101.times {hobbit2.celebrate_birthday}
+p hobbit2
