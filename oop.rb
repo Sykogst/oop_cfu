@@ -3,6 +3,28 @@
 # it should have a color attribute, that is silver by default
 # it should have a method called "say" that returns whatever string is passed in, with "*~*" at the beginning and end of the string
 
+# Define class called Unicorn
+class Unicorn
+    # Two attributes: name (dynamic) and color (default is silver - goes last)
+    attr_reader :name, :color
+    def initialize(name, color = 'silver')
+        @name = name
+        @color = color
+    end
+    # method: say(string), returns a passed in string argument, with "*~*" and both ends of string
+    def say(message)
+        '*~* ' + @color + ' ' + message + ' ' + @name + ' *~*'
+    end
+end
+
+# Create new variable, horn_horse1, to assign first Unicorn object instance, with just a name, 'Charlie'
+# Call say instance method on horn_horse1 object instance, with arugment "sparkle", prints output string
+horn_horse1 = Unicorn.new('Charlie')
+p horn_horse1.say('sparkle')
+# Create another variable, horn_horse2, to assign another Unicorn object instance, with name 'Frankie' and different color 'red'
+# Call say instance method on horn_horse2 object instance, with argument 'moody', prints output string
+horn_horse2 = Unicorn.new('Frankie', 'red')
+p horn_horse2.say('moody')
 
 
 #  Write a class called Vampire
