@@ -67,6 +67,36 @@ p blood_being2
 #  it should have a is_hungry attribute that is true by default
 #  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
 
+# Define class called Dragon
+class Dragon
+    # Four attributes: name (dynamic), rider (dynamic), color (dynamic), and is_hungry (default is true)
+    attr_reader :name, :rider, :color, :is_hungry
+    def initialize(name, rider, color)
+        @name = name
+        @rider = rider
+        @color = color
+        @is_hungry = true
+    end
+    # eat method, one integer parameter for times eaten, if argument passed is 4 or greater, dragon is no longer hungry and is_hungry changes to false
+    def eat(times_fed)
+        @is_hungry = false if times_fed >= 4
+    end
+end
+
+# Create varible giant_lizard1 to assign a Dragon object isntance; assign object attributes with arguments: name of 'Puff', trainer called 'Tom', and color of 'green'
+# Prints to diplay object atrributes of giant_lizard1
+giant_lizard1 = Dragon.new('Puff', 'Tom', 'green')
+p giant_lizard1
+# Call instance method with argument of integer 3 on giant_lizard1, is_hungry attribute changes to false if fed 4 times
+# Print attributes and expected is_hungry attribute to stay same: @is_hungry=true
+giant_lizard1.eat(3)
+p giant_lizard1
+# Call instance method with argument of integer 4 on giant_lizard1, is_hungry attribute changes to false if fed 4 times
+# Print attributes and expected is_hungry attribute to change: @is_hungry=false
+giant_lizard1.eat(4)
+p giant_lizard1
+        
+
 
 #  Write a Hobbit class
 #  it should have a dynamic name attribute (string)
