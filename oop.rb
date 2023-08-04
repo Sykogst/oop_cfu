@@ -5,11 +5,11 @@
 
 # Define class called Unicorn
 class Unicorn
-    # Two attributes: name (dynamic) and color (default is silver - goes last)
+    # Two attributes: name (dynamic) and color (default is silver)
     attr_reader :name, :color
-    def initialize(name, color = 'silver')
+    def initialize(name)
         @name = name
-        @color = color
+        @color = 'silver'
     end
     # method: say(string), returns a passed in string argument, with "*~*" and both ends of string
     def say(message)
@@ -23,7 +23,7 @@ horn_horse1 = Unicorn.new('Charlie')
 p horn_horse1.say('sparkle')
 # Create another variable, horn_horse2, to assign another Unicorn object instance, with name 'Frankie' and different color 'red'
 # Call say instance method on horn_horse2 object instance, with argument 'moody', prints output string
-horn_horse2 = Unicorn.new('Frankie', 'red')
+horn_horse2 = Unicorn.new('Frankie')
 p horn_horse2.say('moody')
 
 
